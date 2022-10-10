@@ -1,9 +1,18 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
+import Topic from '../Topic/Topic';
 
 const Topics = () => {
+    const topics = useLoaderData();
+    console.log(topics)
     return (
-        <div>
-            <h1>This is Topics:</h1>
+        <div className='container d-flex gap-5'>
+            {
+                topics.data.map(topic => <Topic
+                    key={topic.id}
+                    topic = {topic}
+                ></Topic>)
+            }
         </div>
     );
 };
