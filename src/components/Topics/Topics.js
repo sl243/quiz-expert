@@ -4,7 +4,7 @@ import Topic from '../Topic/Topic';
 
 const Topics = () => {
     const topics = useLoaderData();
-    console.log(topics)
+   
     return (
         <div className='container d-flex gap-5'>
             {
