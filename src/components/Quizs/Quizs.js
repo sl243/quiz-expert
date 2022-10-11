@@ -1,33 +1,61 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Quizs.css'
 import { EyeIcon } from '@heroicons/react/24/solid'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const Quizs = ({ quiz }) => {
+const Quizs = ({ quiz, handleToAns }) => {
     const { question, options, correctAnswer, id } = quiz;
 
-    const handleToAns = () => {
-        console.log('ans')
-    }
+    const [ans, setAns] = useState();
+
+    console.log(ans)
+
+   
+
+    const notify = () => toast("Wow so easy!");
+
     return (
         <div className='container border rounded-3 mb-5 shadow'>
+            
             <div className='d-flex justify-content-around align-items-center'>
-                <h4 className='mt-5'>{question}</h4>
-                <EyeIcon onClick={() => handleToAns()} className="eye-icon"></EyeIcon>
+                <h4 className='mt-5'>Quiz:-{quiz.length} {question}</h4>
+                <EyeIcon className="eye-icon mt-5">{correctAnswer}</EyeIcon>
             </div>
             <div className='quiz-option-container'>
+
                 <button className='w-75 border border-0 rounded-3 m-3 p-3'>
-                    <p>{options[0]}</p>
+                    <input type="radio" name={id} value={options[0]} onChange={e => setAns(e.target.value)} />
+                    {options[0]}
                 </button>
+
                 <button className='w-75 border border-0 rounded-3 m-3 p-3 '>
-                    <p>{options[1]}</p>
+                    <input type="radio" name={id} value={options[1]} onChange={e => setAns(e.target.value)} />
+                    {options[1]}
                 </button>
+
                 <button className='w-75 border border-0 rounded-3 m-3 p-3'>
-                    <p>{options[2]}</p>
+                    <input type="radio" name={id} value={options[2]} onChange={e => setAns(e.target.value)} />
+                    {options[2]}
                 </button>
+
                 <button className='w-75 border border-0 rounded-3 m-3 p-3'>
-                    <p>{options[3]}</p>
+                    <input type="radio" name={id} value={options[3]} onChange={e => setAns(e.target.value)} />
+                    {options[3]}
                 </button>
-        
+
+                <ToastContainer
+                    position="top-center"
+                    autoClose={5000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="light"
+                />
             </div>
         </div>
     );
