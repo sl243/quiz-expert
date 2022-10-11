@@ -3,7 +3,7 @@ import './Quizs.css'
 import { EyeIcon } from '@heroicons/react/24/solid'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Toast } from 'react-bootstrap';
+
 
 const Quizs = ({ quiz, handleToAns }) => {
     const { question, options, correctAnswer, id } = quiz;
@@ -25,7 +25,7 @@ const Quizs = ({ quiz, handleToAns }) => {
             <div className='d-flex justify-content-around align-items-center'>
                 <h4 className='mt-5'>Quiz:-{quiz.length} {question}</h4>
                 <div onClick={notify}>
-                    <EyeIcon className="eye-icon mt-5">{correctAnswer}</EyeIcon>
+                    <EyeIcon className="eye-icon mt-5"></EyeIcon>
                 </div>
             </div>
             <div className='quiz-option-container'>

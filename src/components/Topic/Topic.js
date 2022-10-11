@@ -2,6 +2,7 @@ import React from 'react';
 import './Topic.css';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
+import { ArrowRightIcon } from '@heroicons/react/24/solid'
 
 
 const Topic = ({ topic }) => {
@@ -15,6 +16,7 @@ const Topic = ({ topic }) => {
                 <h5>{name}</h5>
                 <h5>{total}</h5>
                 <Link to={`/topic/${id}`}><Button variant="primary">Strat Practic
+                <ArrowRightIcon className="eye-icon ps-2"></ArrowRightIcon>
                 </Button></Link>
             </div>
         </div>
