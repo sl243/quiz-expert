@@ -39,6 +39,13 @@ function App() {
           element:<Blog></Blog>
         }
       ]
+    },
+    {
+      path:'*',
+      element: <div className='container mt-5 border rounded-3 shadow m-5 p-5'>
+        <h1>Yout Route is not Found</h1>
+        <h3>404 NOT FOUND</h3>
+      </div>
     }
   ])
   return (
