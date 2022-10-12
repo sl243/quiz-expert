@@ -7,7 +7,7 @@ const TopicDetails = () => {
 
     return (
         <div>
-            <h1 className='mt-5'>Quiz For {topic.data.name}</h1>
+            <h1 className='container text-center mt-5'>Quiz For {topic.data.name}</h1>
             {
                 topic.data.questions.map(quiz => <Quizs
                     key={quiz.id}

@@ -10,11 +10,15 @@ const Quizs = ({ quiz, handleToAns }) => {
 
     const [ans, setAns] = useState();
 
+    const [correcAns, setCorrecAns] = useState(false)
+
     if (correctAnswer === ans) {
         console.log('right')
+
     }
     else {
         console.log('wrong')
+
     }
 
     const notify = () => toast(correctAnswer);

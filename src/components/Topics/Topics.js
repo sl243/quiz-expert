@@ -6,7 +6,7 @@ const Topics = () => {
     const topics = useLoaderData();
    
     return (
-        <div className='container d-flex gap-5'>
+        <div className='container d-flex gap-5 mt-5'>
             {
                 topics.data.map(topic => <Topic
                     key={topic.id}

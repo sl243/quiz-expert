@@ -2,10 +2,20 @@
     height: 100px;
     background-color: lavender;
     padding-top: 30px;
-    font-size: 25px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .header-container a {
     text-decoration: none;
+    font-size: 25px;
+    font-weight: 600;
     margin-right: 20px;
+    color: orange;
+}
+
+
+.nav-icon {
+    width: 30px;
+    height: 30px;
 }
