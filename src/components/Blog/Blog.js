@@ -29,7 +29,7 @@ const Blog = () => {
                     React.createContext() is all you need. It returns a consumer and a provider. Provider is a component that as it's names suggests provides the state to its children. It will hold the "store" and be the parent of all the components that might need that store. Consumer as it so happens is a component that consumes and uses the state.
                 </p>
             </div>
-            <div className='border rounded-3 p-3 mt-3'>
+            <div className='border rounded-3 p-3 mt-3 mb-5'>
                 <h2 className='text-center mt-3'>
                     What is useRef hook?
                 </h2>

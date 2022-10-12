@@ -1,39 +1,48 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Quizs.css'
 import { EyeIcon } from '@heroicons/react/24/solid'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-const Quizs = ({ quiz, handleToAns }) => {
+const Quizs = ({ quiz }) => {
     const { question, options, correctAnswer, id } = quiz;
 
-    const [ans, setAns] = useState(false);
+    const [ans, setAns] = useState();
 
-    if (correctAnswer === ans) {
-        console.log('right')
+    const [toastView, setToastView] = useState(false);
 
-    }
-    else {
-        console.log('wrong')
+    useEffect(() => {
+        if (ans !== undefined) {
+            if (correctAnswer === ans) {
+                setToastView(true)
+                notify1()
+            }
+            else {
+                setToastView(false)
+                notify2()
+            }
+        }
 
-    }
+    }, [ans])
 
     const notify = () => toast(correctAnswer);
+    const notify1 = () => toast('Your ans is Correct');
+    const notify2 = () => toast('Your ans is Wrong');
 
     return (
         <div className='container border rounded-3 mb-5 shadow'>
 
             <div className='d-flex justify-content-around align-items-center'>
-                <h4 className='mt-5'>Quiz:- {question}</h4>
+                <h4 className='mt-5'>{question}</h4>
                 <div onClick={notify}>
                     <EyeIcon className="eye-icon mt-5"></EyeIcon>
                 </div>
             </div>
+
             <div className='quiz-option-container'>
 
                 <button className='w-75 border border-0 rounded-3 m-3 p-3'>
-
                     <input
                         type="radio" name={id} value={options[0]} onChange={e => setAns(e.target.value)} />
                     {options[0]}
