@@ -8,9 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const Quizs = ({ quiz, handleToAns }) => {
     const { question, options, correctAnswer, id } = quiz;
 
-    const [ans, setAns] = useState();
-
-    const [correcAns, setCorrecAns] = useState(false)
+    const [ans, setAns] = useState(false);
 
     if (correctAnswer === ans) {
         console.log('right')
@@ -27,18 +25,17 @@ const Quizs = ({ quiz, handleToAns }) => {
         <div className='container border rounded-3 mb-5 shadow'>
 
             <div className='d-flex justify-content-around align-items-center'>
-                <h4 className='mt-5'>Quiz:-{quiz.length} {question}</h4>
+                <h4 className='mt-5'>Quiz:- {question}</h4>
                 <div onClick={notify}>
                     <EyeIcon className="eye-icon mt-5"></EyeIcon>
                 </div>
             </div>
             <div className='quiz-option-container'>
 
-
-
                 <button className='w-75 border border-0 rounded-3 m-3 p-3'>
 
-                    <input onClick={notify} type="radio" name={id} value={options[0]} onChange={e => setAns(e.target.value)} />
+                    <input
+                        type="radio" name={id} value={options[0]} onChange={e => setAns(e.target.value)} />
                     {options[0]}
                 </button>
 

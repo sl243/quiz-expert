@@ -7,3 +7,13 @@
     width: 30px;
     height: 30px;
 }
+
+/* responsive device */
+
+@media screen and (max-width: 786px) {
+    .quiz-option-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+}

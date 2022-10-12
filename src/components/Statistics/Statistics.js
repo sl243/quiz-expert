@@ -10,7 +10,7 @@ const Statistics = () => {
 
     return (
         <div>
-            <h1 className='container text-center mt-5'>Statistics Chart</h1>
+            <h1 className='container mt-5'>Statistics Chart</h1>
             <ResponsiveContainer width="90%" height={400}>
                 <LineChart
                     className='container mt-5'

@@ -1,30 +1,26 @@
 import React, { useState } from 'react';
 import './Header.css'
+
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
 
 const Header = () => {
-    const [open, setOpen] = useState(false)
     return (
-        <nav className='container header-container'>
-            <Link to='/'>Quiz Expert</Link>
-            <div className='d-flex'>
-                <div className='navber'>
-                    <Link to='/'>Home</Link>
-                    <Link to='/topics'>Topics</Link>
-                    <Link to='/Statistics'>Statistics</Link>
-                    <Link to='/blog'>Blog</Link>
-                </div>
-                <div onClick={() => setOpen(!open)} className='nav-icon'>
-                    {
-                        open ? <Bars3Icon></Bars3Icon> : <XMarkIcon></XMarkIcon>
-                    }
-                    {/* <Bars3Icon></Bars3Icon>
-                    <XMarkIcon></XMarkIcon> */}
-                </div>
-            </div>
 
-        </nav>
+        <Navbar bg="dark" variant="dark">
+            <Container>
+                <Navbar.Brand as={Link} to='/'>Quiz Expert</Navbar.Brand>
+                <Nav className="me-auto">
+                    {/* <Nav.Link as = {Link} to = '/'>Home</Nav.Link> */}
+                    <Nav.Link as={Link} to='/topics'>Topics</Nav.Link>
+                    <Nav.Link as={Link} to='/statistics'>Statistics</Nav.Link>
+                    <Nav.Link as={Link} to='/blog'>Blog</Nav.Link>
+                </Nav>
+            </Container>
+        </Navbar>
+
     );
 };
 

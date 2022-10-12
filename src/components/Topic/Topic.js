@@ -12,11 +12,11 @@ const Topic = ({ topic }) => {
             <div className='container topic-container bg-primary border rounded'>
                 <img src={logo} alt=''></img>
             </div>
-            <div className='d-flex gap-4 mt-5'>
+            <div className='d-flex gap-3 mt-5'>
                 <h5>{name}</h5>
                 <h5>{total}</h5>
                 <Link to={`/topic/${id}`}><Button variant="primary">Strat Practic
-                <ArrowRightIcon className="eye-icon ps-2"></ArrowRightIcon>
+                <ArrowRightIcon className="eye-icon ps-1"></ArrowRightIcon>
                 </Button></Link>
             </div>
         </div>

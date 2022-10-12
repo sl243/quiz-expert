@@ -19,7 +19,7 @@ function App() {
           element:<Home></Home>
         },
         {
-          path:'topics',
+          path:'/topics',
           loader: async() => fetch('https://openapi.programming-hero.com/api/quiz'),
           element:<Topics></Topics>
         },
@@ -43,7 +43,7 @@ function App() {
     },
     {
       path:'*',
-      element: <div className='container mt-5 border rounded-3 shadow m-5 p-5'>
+      element: <div className='container text-center mt-5 border rounded-3 shadow p-5'>
         <h1>Yout Route is not Found</h1>
         <h3>404 NOT FOUND</h3>
       </div>
